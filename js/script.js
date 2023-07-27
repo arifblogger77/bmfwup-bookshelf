@@ -168,7 +168,7 @@ function addBook() {
   const yearBook = document.querySelector('#inputBookYear');
   const isCompleteBook = document.querySelector('#inputBookIsComplete');
 
-  if (idBook == NaN) {
+  if (isNaN(parseInt(idBook.value))) {
     const generateID = generateId();
     const bookObject = generateBookObject(generateID, titleBook.value, authorBook.value, parseInt(yearBook.value), isCompleteBook.checked);
     books.push(bookObject);
