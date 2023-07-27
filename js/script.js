@@ -47,12 +47,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   Object.values(sections).forEach((section) => {
     section.button.addEventListener('click', () => {
-      onButtonClick(section.button, section.hide, section.show);
+      onButtonClick({ button: section.button, sectionsToHide: section.hide, sectionsToShow: section.show });
     });
   });
 
   // Setting the default state to 'home'
-  onButtonClick(homeButton, sections.home.hide, sections.home.show);
+  onButtonClick({ button: homeButton, sectionsToHide: sections.home.hide, sectionsToShow: sections.home.show });
 
   // Form
   const submitForm = document.querySelector('#input');
@@ -71,11 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const spanSubmit = document.querySelector('#bookSubmit span');
   const checkboxInput = document.querySelector('#inputBookIsComplete');
   checkboxInput.addEventListener('change', function (event) {
-    if (event.target.checked) {
-      spanSubmit.innerHTML = TEXT_CHECKED;
-    } else {
-      spanSubmit.innerHTML = TEXT_UNCHECKED;
-    }
+    spanSubmit.innerHTML = event.target.checked ? TEXT_CHECKED : TEXT_UNCHECKED;
   });
 
   if (isStorageExist()) {
@@ -97,7 +93,7 @@ function showSections(sectionsToShow) {
   sectionsToShow.forEach((section) => section.classList.remove('hidden'));
 }
 
-function onButtonClick(button, sectionsToHide, sectionsToShow) {
+function onButtonClick({ button, sectionsToHide, sectionsToShow }) {
   setActiveButton(button);
   hideSections(sectionsToHide);
   showSections(sectionsToShow);
@@ -179,7 +175,7 @@ function addBook() {
   } else {
     const bookTarget = findBook(parseInt(idBook.value));
 
-    if (bookTarget == null) return;
+    if (bookTarget == undefined) return;
 
     bookTarget.title = titleBook.value;
     bookTarget.author = authorBook.value;
@@ -189,7 +185,7 @@ function addBook() {
     document.dispatchEvent(new Event(RENDER_EVENT));
     saveData();
     snackbar(`Buku ${bookTarget.title} telah diubah`);
-    
+
     title.innerHTML = 'Masukkan Buku Baru';
   }
 
@@ -203,7 +199,7 @@ function addBook() {
 function editBook(bookId) {
   const bookTarget = findBook(bookId);
 
-  if (bookTarget == null) return;
+  if (bookTarget == undefined) return;
 
   const title = document.querySelector('.input_section__title');
 
@@ -216,7 +212,7 @@ function editBook(bookId) {
   const spanSubmit = document.querySelector('#bookSubmit span');
 
   // change UI
-  onButtonClick(sections.add, sections.add.hide, sections.add.show);
+  onButtonClick({ button: sections.add, sectionsToHide: sections.add.hide, sectionsToShow: sections.add.show });
 
   title.innerHTML = `Edit Buku ${bookTarget.title}`
 
@@ -226,11 +222,7 @@ function editBook(bookId) {
   yearBook.value = bookTarget.year;
   isCompleteBook.checked = bookTarget.isComplete;
 
-  if (isCompleteBook.checked) {
-    spanSubmit.innerHTML = TEXT_CHECKED;
-  } else {
-    spanSubmit.innerHTML = TEXT_UNCHECKED;
-  }
+  spanSubmit.innerHTML = isCompleteBook.checked ? TEXT_CHECKED : TEXT_UNCHECKED;
 }
 
 function searchBook() {
@@ -244,29 +236,17 @@ function searchBook() {
 }
 
 function findBook(bookId) {
-  for (const bookItem of books) {
-    if (bookItem.id === bookId) {
-      return bookItem;
-    }
-  }
-
-  return null;
+  return books.find(book => book.id === bookId);
 };
 
 function findBookIndex(bookId) {
-  for (const index in books) {
-    if (books[index].id === bookId) {
-      return index;
-    }
-  }
-
-  return -1;
+  return books.findIndex(book => book.id === bookId);
 };
 
 function addBookToRead(bookId) {
   const bookTarget = findBook(bookId);
 
-  if (bookTarget == null) return;
+  if (bookTarget == undefined) return;
 
   bookTarget.isComplete = true;
   document.dispatchEvent(new Event(RENDER_EVENT));
@@ -288,7 +268,7 @@ function removeBook(bookId) {
 function undoBookFromRead(bookId) {
   const bookTarget = findBook(bookId);
 
-  if (bookTarget == null) return;
+  if (bookTarget == undefined) return;
 
   bookTarget.isComplete = false;
   document.dispatchEvent(new Event(RENDER_EVENT));

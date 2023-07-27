@@ -1,0 +1,175 @@
+/* Button */
+.trash_button {
+  width: 40px;
+  height: 40px;
+
+  -webkit-mask-image: url("../assets/trash-outline.svg");
+  mask-image: url("../assets/trash-outline.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  cursor: pointer;
+  border: none;
+}
+
+.trash_button:hover {
+  -webkit-mask-image: url("../assets/trash-fill.svg");
+  mask-image: url("../assets/trash-fill.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.check_button {
+  width: 40px;
+  height: 40px;
+
+  -webkit-mask-image: url("../assets/check-circle-outline.svg");
+  mask-image: url("../assets/check-circle-outline.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  cursor: pointer;
+  border: none;
+}
+
+.check_button:hover {
+  -webkit-mask-image: url("../assets/check-circle-fill.svg");
+  mask-image: url("../assets/check-circle-fill.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.undo_button {
+  width: 40px;
+  height: 40px;
+
+  -webkit-mask-image: url("../assets/undo-outline.svg");
+  mask-image: url("../assets/undo-outline.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  cursor: pointer;
+  border: none;
+}
+
+.undo_button:hover {
+  -webkit-mask-image: url("../assets/undo-fill.svg");
+  mask-image: url("../assets/undo-fill.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.edit_button {
+  width: 40px;
+  height: 40px;
+
+  -webkit-mask-image: url("../assets/edit-outline.svg");
+  mask-image: url("../assets/edit-outline.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  cursor: pointer;
+  border: none;
+}
+
+.edit_button:hover {
+  -webkit-mask-image: url("../assets/edit-fill.svg");
+  mask-image: url("../assets/edit-fill.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.search_button {
+  width: 40px;
+  height: 40px;
+
+  -webkit-mask-image: url("../assets/search-outline.svg");
+  mask-image: url("../assets/search-outline.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  cursor: pointer;
+  border: none;
+}
+
+.search_button:hover {
+  -webkit-mask-image: url("../assets/search-fill.svg");
+  mask-image: url("../assets/search-fill.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.home_button {
+  width: 40px;
+  height: 40px;
+
+  -webkit-mask-image: url("../assets/home-outline.svg");
+  mask-image: url("../assets/home-outline.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  cursor: pointer;
+  border: none;
+}
+
+.home_button:hover,
+.home_button.active {
+  -webkit-mask-image: url("../assets/home-fill.svg");
+  mask-image: url("../assets/home-fill.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.add_button {
+  width: 40px;
+  height: 40px;
+
+  -webkit-mask-image: url("../assets/add-document-outline.svg");
+  mask-image: url("../assets/add-document-outline.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  cursor: pointer;
+  border: none;
+}
+
+.add_button:hover,
+.add_button.active {
+  -webkit-mask-image: url("../assets/add-document-fill.svg");
+  mask-image: url("../assets/add-document-fill.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.unread_button {
+  width: 40px;
+  height: 40px;
+
+  -webkit-mask-image: url("../assets/memo-outline.svg");
+  mask-image: url("../assets/memo-outline.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  cursor: pointer;
+  border: none;
+}
+
+.unread_button:hover,
+.unread_button.active {
+  -webkit-mask-image: url("../assets/memo-fill.svg");
+  mask-image: url("../assets/memo-fill.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.read_button {
+  width: 40px;
+  height: 40px;
+
+  -webkit-mask-image: url("../assets/memo-circle-check-outline.svg");
+  mask-image: url("../assets/memo-circle-check-outline.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  cursor: pointer;
+  border: none;
+}
+
+.read_button:hover,
+.read_button.active {
+  -webkit-mask-image: url("../assets/memo-circle-check-fill.svg");
+  mask-image: url("../assets/memo-circle-check-fill.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}

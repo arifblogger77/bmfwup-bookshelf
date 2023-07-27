@@ -1,63 +1,21 @@
-:root {
-  --primary: #eeaeca;
-  --primary-rgb: 238, 174, 202;
-  --secondary: #94bbe9;
-  --secondary-rgb: 148, 187, 233;
-  --green: #0cb80c;
-  --red: #b80c0c;
-  --white: #faf0e6;
-  --white-rgb: 250, 240, 230;
-  --black: #121212;
-  --black-rgb: 18, 18, 18;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: var(--primary);
-  background: radial-gradient(
-    circle,
-    rgba(var(--primary-rgb), 0.9) 0%,
-    rgba(var(--secondary-rgb), 1) 100%
-  );
-}
-
-body,
-input,
-button {
-  font-family: "Open Sans", sans-serif;
-}
-
-input,
-button {
-  font-size: 16px;
-}
-
-.head_bar {
-  margin: 16px;
-  padding: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--black);
-  background: rgba(var(--white-rgb), 0.33);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(var(--black-rgb), 0.1);
-  border: 1px solid rgba(var(--white-rgb), 0.36);
-  backdrop-filter: blur(4.2px);
-  -webkit-backdrop-filter: blur(4.2px);
-}
-
 main {
   max-width: 800px;
   width: 80%;
   margin: 0 auto;
   padding: 16px;
   margin-bottom: 8vh;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 .input_section {
@@ -334,199 +292,6 @@ p {
     bottom: 0;
     opacity: 0;
   }
-}
-
-.footer_menu {
-  bottom: 0;
-  position: fixed;
-  width: 100%;
-  padding: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  color: var(--white);
-  background: rgba(var(--primary-rgb), 0.63);
-  border-radius: 16px 16px 0 0;
-  box-shadow: 0 4px 30px rgba(var(--black-rgb), 0.1);
-  border: 1px solid rgba(var(--white-rgb), 0.36);
-  backdrop-filter: blur(4.2px);
-  -webkit-backdrop-filter: blur(4.2px);
-}
-
-/* Button */
-.trash_button {
-  width: 40px;
-  height: 40px;
-
-  -webkit-mask-image: url("../assets/trash-outline.svg");
-  mask-image: url("../assets/trash-outline.svg");
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  cursor: pointer;
-  border: none;
-}
-
-.trash_button:hover {
-  -webkit-mask-image: url("../assets/trash-fill.svg");
-  mask-image: url("../assets/trash-fill.svg");
-  -webkit-mask-size: contain;
-  mask-size: contain;
-}
-
-.check_button {
-  width: 40px;
-  height: 40px;
-
-  -webkit-mask-image: url("../assets/check-circle-outline.svg");
-  mask-image: url("../assets/check-circle-outline.svg");
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  cursor: pointer;
-  border: none;
-}
-
-.check_button:hover {
-  -webkit-mask-image: url("../assets/check-circle-fill.svg");
-  mask-image: url("../assets/check-circle-fill.svg");
-  -webkit-mask-size: contain;
-  mask-size: contain;
-}
-
-.undo_button {
-  width: 40px;
-  height: 40px;
-
-  -webkit-mask-image: url("../assets/undo-outline.svg");
-  mask-image: url("../assets/undo-outline.svg");
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  cursor: pointer;
-  border: none;
-}
-
-.undo_button:hover {
-  -webkit-mask-image: url("../assets/undo-fill.svg");
-  mask-image: url("../assets/undo-fill.svg");
-  -webkit-mask-size: contain;
-  mask-size: contain;
-}
-
-.edit_button {
-  width: 40px;
-  height: 40px;
-
-  -webkit-mask-image: url("../assets/edit-outline.svg");
-  mask-image: url("../assets/edit-outline.svg");
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  cursor: pointer;
-  border: none;
-}
-
-.edit_button:hover {
-  -webkit-mask-image: url("../assets/edit-fill.svg");
-  mask-image: url("../assets/edit-fill.svg");
-  -webkit-mask-size: contain;
-  mask-size: contain;
-}
-
-.search_button {
-  width: 40px;
-  height: 40px;
-
-  -webkit-mask-image: url("../assets/search-outline.svg");
-  mask-image: url("../assets/search-outline.svg");
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  cursor: pointer;
-  border: none;
-}
-
-.search_button:hover {
-  -webkit-mask-image: url("../assets/search-fill.svg");
-  mask-image: url("../assets/search-fill.svg");
-  -webkit-mask-size: contain;
-  mask-size: contain;
-}
-
-.home_button {
-  width: 40px;
-  height: 40px;
-
-  -webkit-mask-image: url("../assets/home-outline.svg");
-  mask-image: url("../assets/home-outline.svg");
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  cursor: pointer;
-  border: none;
-}
-
-.home_button:hover,
-.home_button.active {
-  -webkit-mask-image: url("../assets/home-fill.svg");
-  mask-image: url("../assets/home-fill.svg");
-  -webkit-mask-size: contain;
-  mask-size: contain;
-}
-
-.add_button {
-  width: 40px;
-  height: 40px;
-
-  -webkit-mask-image: url("../assets/add-document-outline.svg");
-  mask-image: url("../assets/add-document-outline.svg");
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  cursor: pointer;
-  border: none;
-}
-
-.add_button:hover,
-.add_button.active {
-  -webkit-mask-image: url("../assets/add-document-fill.svg");
-  mask-image: url("../assets/add-document-fill.svg");
-  -webkit-mask-size: contain;
-  mask-size: contain;
-}
-
-.unread_button {
-  width: 40px;
-  height: 40px;
-
-  -webkit-mask-image: url("../assets/memo-outline.svg");
-  mask-image: url("../assets/memo-outline.svg");
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  cursor: pointer;
-  border: none;
-}
-
-.unread_button:hover,
-.unread_button.active {
-  -webkit-mask-image: url("../assets/memo-fill.svg");
-  mask-image: url("../assets/memo-fill.svg");
-  -webkit-mask-size: contain;
-  mask-size: contain;
-}
-
-.read_button {
-  width: 40px;
-  height: 40px;
-
-  -webkit-mask-image: url("../assets/memo-circle-check-outline.svg");
-  mask-image: url("../assets/memo-circle-check-outline.svg");
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  cursor: pointer;
-  border: none;
-}
-
-.read_button:hover,
-.read_button.active {
-  -webkit-mask-image: url("../assets/memo-circle-check-fill.svg");
-  mask-image: url("../assets/memo-circle-check-fill.svg");
-  -webkit-mask-size: contain;
-  mask-size: contain;
 }
 
 @media screen and (min-width: 600px) {

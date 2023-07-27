@@ -1,0 +1,17 @@
+.footer_menu {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--white);
+    background: rgba(var(--primary-rgb), 0.63);
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 4px 30px rgba(var(--black-rgb), 0.1);
+    border: 1px solid rgba(var(--white-rgb), 0.36);
+    backdrop-filter: blur(4.2px);
+    -webkit-backdrop-filter: blur(4.2px);
+  }
+  

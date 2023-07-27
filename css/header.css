@@ -1,0 +1,53 @@
+:root {
+  --primary: #eeaeca;
+  --primary-rgb: 238, 174, 202;
+  --secondary: #94bbe9;
+  --secondary-rgb: 148, 187, 233;
+  --green: #0cb80c;
+  --red: #b80c0c;
+  --white: #faf0e6;
+  --white-rgb: 250, 240, 230;
+  --black: #121212;
+  --black-rgb: 18, 18, 18;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--primary);
+  background: radial-gradient(
+    circle,
+    rgba(var(--primary-rgb), 0.9) 0%,
+    rgba(var(--secondary-rgb), 1) 100%
+  );
+}
+
+body,
+input,
+button {
+  font-family: "Open Sans", sans-serif;
+}
+
+input,
+button {
+  font-size: 16px;
+}
+
+.head_bar {
+  margin: 16px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--black);
+  background: rgba(var(--white-rgb), 0.33);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(var(--black-rgb), 0.1);
+  border: 1px solid rgba(var(--white-rgb), 0.36);
+  backdrop-filter: blur(4.2px);
+  -webkit-backdrop-filter: blur(4.2px);
+}
